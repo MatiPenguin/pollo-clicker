@@ -1,0 +1,80 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	font-family: arial;
+}
+
+.botones{
+	float: right;
+	margin-top: 100px;
+}
+
+.botones button{
+	border: 0px;
+	background-color: #B29700;
+	color: #957F00;
+	padding: 10px 5px 10px 5px;
+	transition: all 500ms ease;
+	width: 100px;
+}
+
+.botones button:hover{
+	cursor: pointer;
+	color: #FFDA00;
+	background-color: #957F00;
+}
+
+.imgPollo{
+	height: 150px;
+	width: 150px;
+}
+
+.casaBase{
+	margin: auto;
+	height: 300px;
+	width: 400px;
+	border: 2px solid black;
+}
+
+.paredes{
+	height: 250px;
+	width: 360px;
+	border: 1px solid blue;
+	margin: auto;
+	margin-top: 50px;
+	opacity: 0;
+	transition: 3s;
+}
+
+.ventanas{
+	height: 30px;
+	width: 30px;
+	border: 1px solid blue;
+	border-radius: 10px;
+	background-color: rgba(0,0,0,0.25);
+	margin-left: 65px;
+	margin-top: 120px;
+	opacity: 0;
+	transition: 1500ms;
+}
+
+.puerta{
+	height: 100px;
+	width: 60px;
+	border: 1px solid blue;
+	margin-left: 250px;
+	opacity: 0;
+	transition: 2s;
+}
+
+#comprarParedesB{
+	transition: 2s;
+}
+
+#comprarVentanasB{
+	transition: 2s;
+	opacity: 0.5;
+}
+/*.botones button:hover{
+	cursor: help;
+}*/
