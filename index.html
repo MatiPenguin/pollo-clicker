@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Pollo Clicker</title>
+	<link rel="stylesheet" type="text/css" href="pollolindo.css">
+</head>
+
+	<body>
+	<div class="botones">
+		<button id="botonClick" class="clickBoton">Click (50)</button>
+		<br />
+		<button id="botonHorno" class="hornoBoton">Horno (150)</button>
+		<br />
+		<button id="botonFabrica" class="fabricaBoton">Fabrica (500)</button>
+	</div>
+	<br />
+	<img src="imagenes/pollo.png" id="imgPollo" class="imgPollo" />
+	<br />
+	<h2 id="pollosCant">0</h2> <h3 id="ps">P/S: 0</h3>
+	<br />
+	<p id="inventario">0</p>
+	<br />
+
+	<div class="Mejoras">
+		<h1>Mejoras</h1>
+		<button id="mejorarCBoton">Mejorar el click.<br /> (+1 Pollo)</button>
+		<p id="costo">1000 Pollos</p>
+		<br />
+		<button id="mejorarHBoton">Mejorar el horno.<br /> (+2 Pollos)</button>
+		<p id="costo2">4000 Pollos</p>
+		<br />
+		<button id="mejorarFBoton">Mejorar la fabrica. <br/> (+5 Pollos)</button>
+		<p id="costo3">10000 Pollos</p>
+	</div>
+
+	<div class="casaBase" id="casaBase">
+		<div class="paredes" id="paredes">
+			<div class="ventanas" id="ventanas"></div>
+			<div class="puerta" id="puerta"></div>
+		</div>
+	</div>
+	<br />
+<button id="comprarParedesB">Paredes</button>
+<button id="comprarVentanasB">Ventanas</button>
+<button id="comprarPuertaB">Puerta</button>
+	<script src="pollofuncional.js"></script>
+	</body>
+
+</html>
