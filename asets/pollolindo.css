@@ -4,6 +4,14 @@
 	font-family: arial;
 }
 
+body {
+	/*background:url(file:///F:/Pollo%20Clicker/fondo2.png);*/ /* Nuestra imagen de fondo */
+	/*background-repeat: repeat;*/ /* Indicamos que no se repetira */
+	/*background-size: cover;*/ /* Encajamos la imagen al 100% del ancho */
+	/*background-attachment: fixed;*/ /* Establecemos una posicion fija para la imagen */
+	background-color: #007689;
+ }
+
 .botones{
 	float: right;
 	margin-top: 100px;
@@ -34,6 +42,7 @@
 	height: 300px;
 	width: 400px;
 	border: 2px solid black;
+	background-color: #f2f2f2;
 }
 
 .paredes{
@@ -64,6 +73,7 @@
 	border: 1px solid blue;
 	margin-left: 250px;
 	opacity: 0;
+	margin-top: -5px;
 	transition: 2s;
 }
 
@@ -74,6 +84,45 @@
 #comprarVentanasB{
 	transition: 2s;
 	opacity: 0.5;
+}
+#comprarPuertaB{
+	transition: 2s;
+	opacity: 0.5;
+}
+
+.mejorascasa{
+	margin-top: -300px;
+}
+
+.informacion{
+	float: right;
+	text-align: center;
+	margin-right: 55%;
+	margin-top: -140px;
+/*	background: url(file:///F:/Pollo%20Clicker/fondo.png);
+	background-repeat: no-repeat;
+	background-size: cover;*/
+	background-color: #026879;
+	padding: 20px 30px 20px 30px;
+	height: 150px;
+	border-radius: 30px;
+}
+
+.mejoras{
+	margin-left: -130px;
+	transition: 1s;
+	background-color: #026879;
+	border-radius: 20px;
+	width: 7%;
+	padding: 15px 10px 15px 10px;
+}
+
+#mejorasBoton{
+	transition: 500ms;
+}
+#mejorasBotonC{
+	transition: 500ms;
+	opacity: 0;
 }
 /*.botones button:hover{
 	cursor: help;
