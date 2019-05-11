@@ -17,7 +17,7 @@ var costeMejoras = [1000, 5000, 10000];
 // Variables Globales.
 var fps = 1;
 var fps2 = 30;
-var losPollos = 1231231231230;
+var losPollos = 100;
 var precios = [50, 150, 500];
 var produccion = [1, 2, 5];
 var cantidadInventario = [0, 0, 0];
@@ -34,11 +34,32 @@ var paredes = document.getElementById('paredes');
 var puerta = document.getElementById('puerta');
 var ventanas = document.getElementById('ventanas');
 
-//1 = paredes - 2 = puerta -- 3 = ventanas.
+//0 = paredes, 1 = ventana 2 = puerta.
 var costecasa = [250, 200, 350];
 var posecion = [false, false, false];
 var poderPoseer = [true, false ,false];
 
+var mejoras = document.getElementById('mejoras');
+var mejorasBoton = document.getElementById('mejorasBoton');
+var mejorasBotonC = document.getElementById('mejorasBotonC');
+var poder = 0;
+var abrirMejoras = function(){
+	if (poder == 0) {
+		mejoras.style.marginLeft = "10px";
+		mejorasBoton.style.opacity = "0";
+		mejorasBotonC.style.opacity = "1";
+		poder = 1;
+	};
+}
+
+var cerrarMejoras = function(){
+	if (poder == 1) {
+		mejoras.style.marginLeft = "-130px";
+		mejorasBoton.style.opacity = "1";
+		mejorasBotonC.style.opacity = "0";
+		poder = 0;
+	};
+}
 //Funciones de compra.
 
 var comprarClick = function(){
@@ -71,6 +92,10 @@ var comprarFabrica = function(){
 }
 
 //Comprar la casa.
+//0 = paredes, 1 = ventana 2 = puerta.
+// var costecasa = [250, 200, 350];
+// var posecion = [false, false, false];
+// var poderPoseer = [true, false ,false];
 
 var comprarParedes = function(){
 	if (losPollos >= costecasa[0] && posecion[0] == false) {
@@ -79,27 +104,29 @@ var comprarParedes = function(){
 		comprarParedesB.style.opacity = "0.2";
 		posecion[0] = true;
 		poderPoseer[1] = true;
+		poderPoseer[2] = true;
 		comprarVentanasB.style.opacity = "1";
+		comprarPuertaB.style.opacity = "1";
 	};
 }
 var comprarVentanas = function(){
-	if (losPollos >= costecasa[2] && posecion[2] == false && poderPoseer[1] == true) {
+	if (losPollos >= costecasa[1] && posecion[1] == false && poderPoseer[1] == true) {
 		ventanas.style.opacity = "1";
-		losPollos-= costecasa[2];
+		losPollos-= costecasa[1];
 		comprarVentanasB.style.opacity = "0.2";
-		posecion[2] = true;
-		poderPoseer[1] = true;
+		posecion[1] = true;
+		// poderPoseer[2] = true;
 	};
 }
-// var comprarPuerta = function(){
-// 	if (losPollos >= costecasa[2] && posecion[2] == false && poderPoseer[1] == true) {
-// 		ventanas.style.opacity = "1";
-// 		losPollos-= costecasa[2];
-// 		comprarVentanasB.style.opacity = "0.2";
-// 		posecion[2] = true;
-// 		poderPoseer[1] = true;
-// 	};
-// }
+ var comprarPuerta = function(){
+ 	if (losPollos >= costecasa[2] && posecion[2] == false && poderPoseer[2] == true) {
+		puerta.style.opacity = "1";
+		losPollos-= costecasa[2];
+		comprarPuertaB.style.opacity = "0.2";
+		posecion[2] = true;
+		// poderPoseer[3] = true;
+	};
+}
 
 //Funciones.
 
@@ -190,3 +217,7 @@ mejorarFBoton.addEventListener("click", mejorarFabrica);
 
 comprarParedesB.addEventListener("click", comprarParedes);
 comprarVentanasB.addEventListener("click", comprarVentanas);
+comprarPuertaB.addEventListener("click", comprarPuerta);
+
+mejorasBoton.addEventListener("click", abrirMejoras);
+mejorasBotonC.addEventListener("click", cerrarMejoras);
