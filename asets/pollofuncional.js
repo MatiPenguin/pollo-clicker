@@ -17,7 +17,7 @@ var costeMejoras = [1000, 5000, 10000];
 // Variables Globales.
 var fps = 1;
 var fps2 = 30;
-var losPollos = 101111110;
+var losPollos = 0;
 var precios = [50, 150, 500];
 var produccion = [1, 2, 5];
 var cantidadInventario = [0, 0, 0];
@@ -46,6 +46,11 @@ var mejoras = document.getElementById('mejoras');
 var mejorasBoton = document.getElementById('mejorasBoton');
 var mejorasBotonC = document.getElementById('mejorasBotonC');
 var poder = 0;
+
+var tit0 = document.getElementById('tit0');
+var tit1 = document.getElementById('tit1');
+var polloHijo = document.getElementById('polloHijo');
+
 var abrirMejoras = function(){
 	if (poder == 0) {
 		mejoras.style.marginLeft = "10px";
@@ -212,12 +217,31 @@ var mejorarFabrica = function(){
 	};
 }
 
+//DESBLOQUEO
+var logros = [false, false];
+var mejorasFamilia = document.getElementById('mejorasFamilia');
+var desbloqhijo = function(){
+	if(losPollos >= 1000 && logros[0] == false){
+		polloHijo.style.opacity = "1";
+		tit0.innerHTML = "Familia.";
+		tit0.style.opacity = "1";
+		tit1.innerHTML = "Hijo.";
+		tit1.style.opacity = "1";
+		produccion[0] += 1;
+		produccion[1] += 1;
+		produccion[2] += 1;
+		logros[0] = true;
+		mejorasFamilia.innerHTML = "+1 Pollo para cada objeto.";
+		mejorasFamilia.style.opacity = "1";
+	};
+}
 
 //MAIN
 var main = function(){
 	clickSumar();
 	hornoSumar();
 	farbricaSumar();
+	desbloqhijo();
 }
 
 var main2 = function(){
