@@ -8,22 +8,25 @@
 </head>
 
 	<body>
-	<div class="botones">
-		<button id="botonClick" class="clickBoton">Click (50)</button>
-		<br />
-		<button id="botonHorno" class="hornoBoton">Horno (150)</button>
-		<br />
-		<button id="botonFabrica" class="fabricaBoton">Fabrica (500)</button>
-	</div>
+<!-- 	<img src="imagenes/fondo.png" class="fondoImg" />
+ -->	<div class="botones">
+			<button id="botonClick" class="clickBoton">Click (50)</button>
+			<br />
+			<button id="botonHorno" class="hornoBoton">Horno (150)</button>
+			<br />
+			<button id="botonFabrica" class="fabricaBoton">Fabrica (500)</button>
+		</div>
 	<br />
 	<img src="imagenes/pollo.png" id="imgPollo" class="imgPollo" />
 	<br />
-	<h2 id="pollosCant">0</h2> <h3 id="ps">P/S: 0</h3>
-	<br />
-	<p id="inventario">0</p>
+	<div class="informacion">
+		<h2 id="pollosCant">0</h2> <h3 id="ps">P/S: 0</h3>
+		<br />
+		<p id="inventario">0</p>
+	</div>
 	<br />
 
-	<div class="Mejoras">
+	<div class="mejoras" id="mejoras">
 		<h1>Mejoras</h1>
 		<button id="mejorarCBoton">Mejorar el click.<br /> (+1 Pollo)</button>
 		<p id="costo">1000 Pollos</p>
@@ -34,6 +37,8 @@
 		<button id="mejorarFBoton">Mejorar la fabrica. <br/> (+5 Pollos)</button>
 		<p id="costo3">10000 Pollos</p>
 	</div>
+	<br />
+	<button id="mejorasBoton">Mejoras</button><button id="mejorasBotonC">Cerrar</button>
 
 	<div class="casaBase" id="casaBase">
 		<div class="paredes" id="paredes">
@@ -42,9 +47,11 @@
 		</div>
 	</div>
 	<br />
-<button id="comprarParedesB">Paredes</button>
-<button id="comprarVentanasB">Ventanas</button>
-<button id="comprarPuertaB">Puerta</button>
+		<div class="mejorascasa">
+			<button id="comprarParedesB">Paredes<br />(250 Pollos)</button>
+			<button id="comprarVentanasB">Ventanas<br />(200 Pollos)</button>
+			<button id="comprarPuertaB">Puerta<br />(350 Pollos)</button>
+		</div>
 	<script src="asets/pollofuncional.js"></script>
 	</body>
 
