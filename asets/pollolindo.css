@@ -189,6 +189,29 @@ button:hover{
 	border-radius: 10px;
 }
 
+.familia{
+	margin-top: -20px;
+	margin-left: 70px;
+	padding: 20px 10px 20px 10px;
+	border: 1px solid #000;
+	width: 200px;
+}
+
+.familia img{
+	opacity: 0.05;
+	transition: 3s;
+}
+
+.familia h2{
+	transition: 3s;
+	opacity: 0.1 ;
+	text-decoration: underline;
+}
+
+#mejorasFamilia{
+	opacity: 0;
+	transition: 3s;
+}
 /*.botones button:hover{
 	cursor: help;
 }*/
