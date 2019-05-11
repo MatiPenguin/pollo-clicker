@@ -17,7 +17,7 @@ var costeMejoras = [1000, 5000, 10000];
 // Variables Globales.
 var fps = 1;
 var fps2 = 30;
-var losPollos = 100;
+var losPollos = 101111110;
 var precios = [50, 150, 500];
 var produccion = [1, 2, 5];
 var cantidadInventario = [0, 0, 0];
@@ -33,7 +33,10 @@ var comprarPuertaB = document.getElementById('comprarPuertaB');
 var paredes = document.getElementById('paredes');
 var puerta = document.getElementById('puerta');
 var ventanas = document.getElementById('ventanas');
-
+var beneficios;
+var beneficiosDos;
+var beneficiosTres;
+var mejorasactuales = document.getElementById('mejorasactuales');
 //0 = paredes, 1 = ventana 2 = puerta.
 var costecasa = [250, 200, 350];
 var posecion = [false, false, false];
@@ -101,20 +104,31 @@ var comprarParedes = function(){
 	if (losPollos >= costecasa[0] && posecion[0] == false) {
 		paredes.style.opacity = "1";
 		losPollos-= costecasa[0];
-		comprarParedesB.style.opacity = "0.2";
+		comprarParedesB.style.opacity = "0.5";
 		posecion[0] = true;
 		poderPoseer[1] = true;
 		poderPoseer[2] = true;
 		comprarVentanasB.style.opacity = "1";
 		comprarPuertaB.style.opacity = "1";
+		produccion[0] += 0.25;
+		beneficios = "Click + 0.25 pollos.<br /><i>(Paredes)</i>.<br /><br />";
+		mejorasactuales.innerHTML = beneficios;
 	};
 }
 var comprarVentanas = function(){
 	if (losPollos >= costecasa[1] && posecion[1] == false && poderPoseer[1] == true) {
 		ventanas.style.opacity = "1";
 		losPollos-= costecasa[1];
-		comprarVentanasB.style.opacity = "0.2";
+		comprarVentanasB.style.opacity = "0.5";
 		posecion[1] = true;
+		produccion[0] += 0.25;
+		beneficiosDos = "Click + 0.25 pollos.<br /><i>(Ventanas)</i>.<br /><br />";
+			if (posecion[1] == true && posecion[2] == true) {
+					mejorasactuales.innerHTML = beneficios + beneficiosDos + beneficiosTres;
+			}else {
+				mejorasactuales.innerHTML = beneficios + beneficiosDos;
+			}
+		// mejorasactuales.innerHTML = beneficios + beneficiosDos;
 		// poderPoseer[2] = true;
 	};
 }
@@ -122,8 +136,16 @@ var comprarVentanas = function(){
  	if (losPollos >= costecasa[2] && posecion[2] == false && poderPoseer[2] == true) {
 		puerta.style.opacity = "1";
 		losPollos-= costecasa[2];
-		comprarPuertaB.style.opacity = "0.2";
+		comprarPuertaB.style.opacity = "0.5";
 		posecion[2] = true;
+		produccion[0] += 0.50;
+		beneficiosTres = "Click + 0.50 pollos.<br /><i>(Puerta)</i>.<br /><br />";
+			if (posecion[1] == true && posecion[2] == true) {
+					mejorasactuales.innerHTML = beneficios + beneficiosDos + beneficiosTres;
+			}else {
+					mejorasactuales.innerHTML = beneficios + beneficiosTres;
+			};
+		// mejorasactuales.innerHTML = beneficiosDos + beneficiosTres;
 		// poderPoseer[3] = true;
 	};
 }
