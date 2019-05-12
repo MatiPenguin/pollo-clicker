@@ -241,11 +241,12 @@ var main = function(){
 	clickSumar();
 	hornoSumar();
 	farbricaSumar();
-	desbloqhijo();
 }
 
 var main2 = function(){
 	render();
+	desbloqhijo();
+
 }
 setInterval(main, 1000/fps);
 setInterval(main2, 1000/fps2);
