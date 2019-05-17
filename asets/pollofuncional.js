@@ -19,7 +19,7 @@ var costeMejoras = [1000, 5000, 10000];
 // Variables Globales.
 var fps = 1;
 var fps2 = 30;
-var losPollos = 11110;
+var losPollos = 0;
 var precios = [50, 150, 500];
 var produccion = [1, 2, 5];
 var cantidadInventario = [0, 0, 0];
