@@ -11,13 +11,15 @@ var costo2 = document.getElementById('costo2');
 var mejorarHBoton = document.getElementById('mejorarHBoton');
 var costo3 = document.getElementById('costo3');
 var mejorarFBoton = document.getElementById('mejorarFBoton');
+var filaH = document.getElementById('filaH');
+var posicionH = 0;
 
 var costeMejoras = [1000, 5000, 10000];
 
 // Variables Globales.
 var fps = 1;
 var fps2 = 30;
-var losPollos = 0;
+var losPollos = 11110;
 var precios = [50, 150, 500];
 var produccion = [1, 2, 5];
 var cantidadInventario = [0, 0, 0];
@@ -51,7 +53,8 @@ var tit0 = document.getElementById('tit0');
 var tit1 = document.getElementById('tit1');
 var polloHijo = document.getElementById('polloHijo');
 
-var abrirMejoras = function(){
+var emergente = document.getElementById('emergente');
+	var abrirMejoras = function(){
 	if (poder == 0) {
 		mejoras.style.marginLeft = "10px";
 		mejorasBoton.style.opacity = "0";
@@ -79,6 +82,7 @@ var comprarClick = function(){
 		botonClick.innerHTML = "Click (" + precios[0] + ")";
 	};
 }
+var contenidoImagenesH;
 
 var comprarHorno = function(){
 	if (losPollos >= precios[1]) {
@@ -87,6 +91,19 @@ var comprarHorno = function(){
 	losPollos = parseInt(losPollos);
 	precios[1] = parseInt(precios[1] + precios[1] * 107) / 100;
 	botonHorno.innerHTML = "Horno (" + precios[1] + ")";
+		if (posicionH == 0) {
+			filaH.innerHTML = '<img src="imagenes/horno.png" class="hornouno">';
+			posicionH = 1;
+			contenidoImagenesH = '<img src="imagenes/horno.png" class="hornodos">';
+		}else if (posicionH == 1) {
+		filaH.innerHTML = contenidoImagenesH + '<img src="imagenes/horno.png" class="hornouno">';
+		posicionH = 2;
+		contenidoImagenesH = contenidoImagenesH + '<img src="imagenes/horno.png" class="hornodos">';
+		}else if (posicionH == 2) {
+			filaH.innerHTML = contenidoImagenesH + '<img src="imagenes/horno.png" class="hornouno">';
+			posicionH = 1;
+			contenidoImagenesH = contenidoImagenesH + '<img src="imagenes/horno.png" class="hornodos">';
+		};
 	};
 }
 var comprarFabrica = function(){
@@ -246,12 +263,9 @@ var main = function(){
 var main2 = function(){
 	render();
 	desbloqhijo();
-
 }
 setInterval(main, 1000/fps);
 setInterval(main2, 1000/fps2);
-
-
 
 //Eventos.
 imgPollo.addEventListener("click", sumarPollo);
